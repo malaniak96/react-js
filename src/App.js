@@ -1,12 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import {User} from "./components/User";
+import {Users} from "./components/Users";
 
-function App() {
+const App = () => {
+
   return (
-    <div className="App">
-
-    </div>
+      <div className="App">
+          <Users/>
+      </div>
   );
 }
+//we add what we want to see in web page
 
-export default App;
+export  {App};
+
+//{App} бо Export може передавати декілька значень,
+// коли їх декілька - ти вказуєш їх як обʼєктом.
+// Якщо в тебе компонента повертає лише це, то можна написати export default
+// і тоді дужок не треба.
