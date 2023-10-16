@@ -6,7 +6,7 @@ const Simpsons = () => {
     const [simpsons, setSimpsons] = useState([]);
 
     useEffect(() => {
-        fetch('https://rickandmortyapi.com/api/character?limit=6')
+        fetch('https://rickandmortyapi.com/api/character/[1,2,3,4,5,6]')
             .then(value => value.json())
             .then(character => setSimpsons(character))
     }, []);
