@@ -11,13 +11,7 @@ import {PostDetails} from "../postDetails/PostDetails";
 const Posts = () => {
 
    const [posts, setPosts] = useState([]);
-    const [postsDetails, setPostsDetails] = useState(null);
 
-    const click =async (userId)=> {
-       const {data} = await postService.getById(userId);
-       setPostsDetails(data);
-       console.log(data);
-    }
 
 
     useEffect(() => {
@@ -30,11 +24,10 @@ const Posts = () => {
     return (
         <div>
              <div className={css.Posts}>
-            {posts.map(post => <Post key={post.id} post={post} click={click}/>)}
+                {posts.map(post => <Post key={post.id} post={post} />)}
+
             </div>
-            <div className={css.Posts}>
-                {postsDetails && <PostDetails postsDetails={postsDetails}/>}
-            </div>
+
         </div>
     );
 };
