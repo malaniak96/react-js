@@ -24,6 +24,6 @@ const Post = ({post}) => {
             {postsDetails && <PostDetails postsDetails={postsDetails}/>}
         </div>
     );
-};
+}:
 
 export {Post};
