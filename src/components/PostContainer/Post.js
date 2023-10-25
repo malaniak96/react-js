@@ -7,7 +7,7 @@ const Post = () => {
     const [post, setPost] = useState(null);
 
     useEffect(() => {
-        postService.getById()
+        postService.getById().then(({data})=>setPost(data))
     }, []);
 
 
