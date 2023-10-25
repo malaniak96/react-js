@@ -1,12 +1,11 @@
 body {
- margin-top: 0;
- margin-left: 2px;
+margin: 0;
 }
 
 .Header {
    display: flex;
     height: 50px;
-    background-color: #d55fc9;
+    background-color: black;
     color: black;
     font-size: 20px;
     justify-content: space-around;
@@ -16,10 +15,10 @@ body {
 
 .Header a{
  text-decoration: none;
- color: black;
+ color: white;
 }
 
 
 .Header a[class='active']{
- color: snow;
+ color: deeppink;
 }

@@ -12,7 +12,7 @@ const router = createBrowserRouter([
             {path: '/albums', element: <AlbumsPage/>},
             {path: '/comments', element: <CommentsPage/>}
         ]},
-    {path: '/posts/id', element:<PostsPage/>}
+    {path: 'comments/posts/:id', element:<PostsPage/>}
 ]);
 
 export {

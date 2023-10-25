@@ -1,0 +1,15 @@
+.Comments{
+    background-color: hotpink;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.btn {
+    background-color: black;
+    font-weight: bold;
+    color: white;
+    border: 3px solid white;
+    border-radius: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}

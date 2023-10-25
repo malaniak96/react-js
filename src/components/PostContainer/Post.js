@@ -1,19 +1,13 @@
-import React, {useEffect, useState} from 'react';
-import {postService} from "../../services/postService";
-import {PostDetails} from "./PostDetails";
-
-const Post = () => {
-
-    const [post, setPost] = useState(null);
-
-    useEffect(() => {
-        postService.getById().then(({data})=>setPost(data))
-    }, []);
-
+import React from 'react';
+import css from './Post.module.css';
+const Post = ({post}) => {
+    const {id, title} = post;
 
     return (
-        <div>
-            {post && <PostDetails post={post}/>}
+        <div className={css.Post}>
+            <div>id: {id}</div>
+            <div>title: {title}</div>
+            <hr/>
         </div>
     );
 };
