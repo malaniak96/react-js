@@ -1,9 +1,12 @@
 import './App.css';
+import {UserContainer} from "./components/UserContainer/UserContainer";
+import {CommentsContainer} from "./components/CommentsContainer/CommentsContainer";
 
 const App = () => {
   return (
-    <div>
-
+    <div style={{display: 'flex'}}>
+      <UserContainer/>
+      <CommentsContainer/>
     </div>
   );
 }
