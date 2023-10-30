@@ -1,15 +1,17 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom";
+
 import css from './Comments.module.css';
 
 const Comment = ({comment}) => {
-    const {id, name, email, body} = comment;
+    const {id, postId, name, email, body} = comment;
 
-    const navigate =useNavigate();
+    const navigate = useNavigate();
 
     return (
         <div className={css.Comments} >
             <div> ID: {id}</div>
+            <div> POST-ID: {postId}</div>
             <div> NAME: {name}</div>
             <div> EMAIL: {email}</div>
             <div> BODY: {body}</div>
@@ -20,3 +22,5 @@ const Comment = ({comment}) => {
 };
 
 export {Comment};
+
+// or ->  <button className={css.btn} onClick={()=> navigate(`posts`, {state: {postId}})}>Get Post</button>

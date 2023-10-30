@@ -1,12 +1,13 @@
 import React from 'react';
 import css from './Post.module.css';
 const Post = ({post}) => {
-    const {id, title} = post;
+    const {id, title, body} = post;
 
     return (
         <div className={css.Post}>
-            <div>id: {id}</div>
-            <div>title: {title}</div>
+            <div> ID: {id}</div>
+            <div> TITLE: {title}</div>
+            <div> BODY: {body}</div>
             <hr/>
         </div>
     );

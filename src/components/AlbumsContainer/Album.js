@@ -1,4 +1,5 @@
 import React from 'react';
+
 import css from './Albums.module.css';
 
 const Album = ({album}) => {
