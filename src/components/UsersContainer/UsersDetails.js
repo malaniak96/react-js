@@ -1,6 +1,7 @@
 import React from 'react';
 import {User} from "./User";
 import {useParams} from "react-router-dom";
+import {UserDetails} from "./UserDetails";
 
 const UsersDetails = ({usersDetails}) => {
 
@@ -8,7 +9,7 @@ const UsersDetails = ({usersDetails}) => {
 
     return (
         <div>
-            {usersDetails.map(userDetails => <User key={userDetails.id} userDetails={userDetails}/>)}
+            {usersDetails.map(userDetails => <UserDetails key={userDetails.id} userDetails={userDetails}/>)}
         </div>
     );
 };
