@@ -6,12 +6,16 @@ import {userService} from "./services/userService";
 import {UserDetailsPage} from "./pages/UserDetailsPage";
 
 import {userDetailsService} from "./services/userDetailsService";
+import {PostsPage} from "./pages/PostsPage";
+import {postService} from "./services/postService";
 
 const router = createBrowserRouter([
     {path: '', element: <MainLayout/>, children: [
             {index: true, element: <Navigate to={'users'}/>},
             {path: 'users', element:<UsersPage/>, loader: () => userService.getAll()}]},
-    {path: ':userId', element: <UserDetailsPage/>, loader: ({params: {userId}}) => userDetailsService.getDetails(userId)}
+    {path: 'users/:userId', element: <UserDetailsPage/>, loader: ({params: {userId}}) => userDetailsService.getDetails(userId), children:[
+            {path: '/users/:userId/posts', element: <PostsPage/>, loader: ({params: {userId}}) => postService.getByUserId(userId)}
+        ]}
 
 ])
 
