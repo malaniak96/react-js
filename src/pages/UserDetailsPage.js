@@ -1,7 +1,8 @@
 import React from 'react';
 import {useLoaderData} from "react-router-dom";
 
-import {UsersDetails} from "../components/UsersContainer/UsersDetails";
+
+import {UserDetails} from "../components/UsersContainer/UserDetails";
 
 const UserDetailsPage = () => {
 
@@ -9,7 +10,7 @@ const UserDetailsPage = () => {
 
     return (
         <div>
-        <UsersDetails usersDetails={data}/>
+        <UserDetails userDetails={data}/>
         </div>
     );
 };

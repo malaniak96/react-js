@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     {path: '', element: <MainLayout/>, children: [
             {index: true, element: <Navigate to={'users'}/>},
             {path: 'users', element:<UsersPage/>, loader: () => userService.getAll()}]},
-    {path: '/users/:userId', element: <UserDetailsPage/>, loader: ({params: userId}) => userDetailsService.getDetails(userId)}
+    {path: ':userId', element: <UserDetailsPage/>, loader: ({params: {userId}}) => userDetailsService.getDetails(userId)}
 
 ])
 
