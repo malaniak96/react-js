@@ -1,6 +1,6 @@
 import React from 'react';
 import {useNavigate, useParams} from "react-router-dom";
-import {post} from "axios";
+
 
 const UserDetails = ({userDetails}) => {
 

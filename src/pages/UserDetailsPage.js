@@ -1,5 +1,7 @@
 import React from 'react';
-import {useLoaderData} from "react-router-dom";
+import {Outlet, useLoaderData} from "react-router-dom";
+
+
 
 
 import {UserDetails} from "../components/UsersContainer/UserDetails";
@@ -10,7 +12,10 @@ const UserDetailsPage = () => {
 
     return (
         <div>
-        <UserDetails userDetails={data}/>
+            <UserDetails userDetails={data}/>
+            <hr/>
+            <hr/>
+            <Outlet/>
         </div>
     );
 };

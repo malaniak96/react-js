@@ -1,15 +1,17 @@
 import React from 'react';
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
+import css from "./Post.module.css";
 
 const Post = ({post}) => {
 
     const {title} = post;
-    const {userId} = useParams();
+    const {postId} = useParams();
+    const navigate = useNavigate();
 
     return (
-        <div>
+        <div className={css.Post}>
             <div> Post Title : {title}</div>
-            <button>See Post Details</button>
+            <button onClick={()=> navigate(`/posts/${postId}`)}>See Post Details</button>
         </div>
     );
 };
