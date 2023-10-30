@@ -1,0 +1,9 @@
+.Header{
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    font-size: 25px;
+}
