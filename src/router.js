@@ -10,6 +10,8 @@ import {PostsPage} from "./pages/PostsPage";
 import {postService} from "./services/postService";
 import {PostDetailsPage} from "./pages/PostDetailsPage";
 import {postDetailsService} from "./services/postDetailsService";
+import {CommentPage} from "./pages/CommentPage";
+import {commentService} from "./services/commentService";
 
 const router = createBrowserRouter([
     {path: '', element: <MainLayout/>, children: [
@@ -18,7 +20,9 @@ const router = createBrowserRouter([
     {path: 'users/:userId', element: <UserDetailsPage/>, loader: ({params: {userId}}) => userDetailsService.getDetails(userId), children:[
             {path: '/users/:userId/posts', element: <PostsPage/>, loader: ({params: {userId}}) => postService.getByUserId(userId)}
         ]},
-    {path:'/posts/postId', element:<PostDetailsPage/>, loader: ({params: {postId}}) => postDetailsService.getAllDetails(postId)}
+    {path:'/posts/:id', element:<PostDetailsPage/>, loader: ({params: {id}}) => postDetailsService.getAllDetails(id), children: [
+            {path: '/posts/:id/comments', element: <CommentPage/>, loader: ({params: {id}}) => commentService.getAllComments(id)}
+        ]}
 
 ])
 

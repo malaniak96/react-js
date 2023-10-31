@@ -1,6 +1,7 @@
 const baseURL = 'https://jsonplaceholder.typicode.com';
 
 const users = '/users';
+const comments = '/comments';
 
 const urls = {
     users:{
@@ -9,7 +10,10 @@ const urls = {
     },
     posts: {
         byUserId: (userId) => `${users}/${userId}/posts`
-    }
+    },
+        comments:{
+        byId: (id) => `/posts/${id}/comments`
+        }
 }
 
 export {
