@@ -1,8 +1,11 @@
 import React from 'react';
+import {useParams} from "react-router-dom";
 
 const Comment = ({comment}) => {
 
-    const {postId, id, name, email, body} = comment;
+    const {postId, name, email, body} = comment;
+
+    const {id} = useParams();
 
     return (
         <div>

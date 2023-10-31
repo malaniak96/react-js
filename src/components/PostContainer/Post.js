@@ -1,10 +1,12 @@
 import React from 'react';
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
+
 import css from "./Post.module.css";
 
 const Post = ({post}) => {
 
     const {title, id} = post;
+
 
     const navigate = useNavigate();
 

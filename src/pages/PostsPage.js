@@ -1,7 +1,8 @@
 import React from 'react';
+import {useLoaderData} from "react-router-dom";
 
 import {Posts} from "../components/PostContainer/Posts";
-import {useLoaderData} from "react-router-dom";
+
 
 const PostsPage = () => {
 

@@ -1,6 +1,7 @@
 import React from 'react';
-import {Comments} from "../components/CommentsContainer/Comments";
 import {Outlet, useLoaderData} from "react-router-dom";
+
+import {Comments} from "../components/CommentsContainer/Comments";
 
 const CommentPage = () => {
     const {data} = useLoaderData();

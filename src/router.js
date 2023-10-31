@@ -20,8 +20,8 @@ const router = createBrowserRouter([
     {path: 'users/:userId', element: <UserDetailsPage/>, loader: ({params: {userId}}) => userDetailsService.getDetails(userId), children:[
             {path: '/users/:userId/posts', element: <PostsPage/>, loader: ({params: {userId}}) => postService.getByUserId(userId)}
         ]},
-    {path:'/posts/:id', element:<PostDetailsPage/>, loader: ({params: {id}}) => postDetailsService.getAllDetails(id), children: [
-            {path: '/posts/:id/comments', element: <CommentPage/>, loader: ({params: {id}}) => commentService.getAllComments(id)}
+    {path:'/posts/:postId', element:<PostDetailsPage/>, loader: ({params: {id}}) => postDetailsService.getPostById(id), children: [
+            {path: '/posts/:postId/comments', element: <CommentPage/>, loader: ({params: {id}}) => commentService.getAllComments(id)}
         ]}
 
 ])
