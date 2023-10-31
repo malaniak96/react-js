@@ -1,5 +1,5 @@
 import React from 'react';
-import {Outlet, useLoaderData} from "react-router-dom";
+import {useLoaderData} from "react-router-dom";
 
 import {Comments} from "../components/CommentsContainer/Comments";
 
@@ -9,9 +9,7 @@ const CommentPage = () => {
     return (
         <div>
             <Comments comments={data}/>
-            <hr/>
-            <hr/>
-            <Outlet/>
+
         </div>
     );
 };

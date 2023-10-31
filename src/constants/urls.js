@@ -1,9 +1,6 @@
-import {axiosService} from "../services/axiosService";
-
 const baseURL = 'https://jsonplaceholder.typicode.com';
 
 const users = '/users';
-const comments = '/comments';
 
 const urls = {
     users:{
@@ -15,8 +12,7 @@ const urls = {
         getPostById: (id) => `/posts/${id}`
     },
         comments:{
-        comments,
-        byId: (id) => `/posts/${id}/comments`
+        getComments: (id) => `/posts/${id}/comments`
         }
 }
 
