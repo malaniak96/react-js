@@ -4,10 +4,12 @@ const character = '/character';
 const episode = '/episode';
 
 const urls = {
-    character,
+    character:{
+      base: character,
+      byId: (id) => `${episode}/${id}`
+    },
     episode: {
         base: episode,
-        byId: (id) => `${character}/${id}`
     }
 
 }

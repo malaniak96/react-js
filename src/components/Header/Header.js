@@ -4,7 +4,7 @@ import {Outlet} from "react-router-dom";
 const Header = () => {
     return (
         <div className={css.Header}>
-            <h1>Ricky and Morty</h1>
+            <h1>Ricky & Morty Episodes</h1>
             <Outlet/>
         </div>
     );
