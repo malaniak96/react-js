@@ -5,16 +5,12 @@ const episode = '/episode';
 
 const urls = {
     character:{
-      base: character,
-      byId: (id) => `${episode}/${id}`
+      byIds: (ids) => `${character}/${ids}`
     },
-    episode: {
-        base: episode,
-    }
-
+    episode
 }
 
 export {
     baseURL,
-    urls
+    urls,
 }

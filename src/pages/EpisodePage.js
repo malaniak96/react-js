@@ -1,16 +1,21 @@
-import React, {createContext, useState} from 'react';
-import {Episodes} from "../components/EpisodeContainer/Episodes";
-import {Outlet} from "react-router-dom";
+import React, {useEffect} from 'react';
 
-const Context = createContext(null);
+
+import {useChapter} from "../hooks";
+import {Episodes} from "../components/EpisodeContainer";
+
+
 const EpisodePage = () => {
-    const [episodeId, setEpisodeId] = useState(null);
+
+    const {setChapter} = useChapter();
+
+    useEffect(() => {
+        setChapter(null)
+    }, [setChapter]);
+
     return (
         <div>
-            <Context.Provider value={{setEpisodeId}}>
-                <Episodes/>
-            </Context.Provider>
-            <Outlet context={{episodeId}}/>
+            <Episodes/>
         </div>
     );
 };

@@ -1,14 +1,17 @@
 import React, {useEffect, useState} from 'react';
-import {characterService} from "../../services/characterService";
+
+import {useParams} from "react-router-dom";
 import {Character} from "./Character";
+import {characterService} from "../../services";
 
 const Characters = () => {
 
     const [characters, setCharacters] = useState([]);
+    const {ids} = useParams();
 
     useEffect(() => {
-        characterService.getAll().then(({data})=> setCharacters(data))
-    }, []);
+        characterService.getByIds(ids).then(({data})=> setCharacters(data))
+    }, [ids]);
 
     return (
         <div>

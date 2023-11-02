@@ -1,0 +1,14 @@
+.Episode {
+    width: calc(20% - 2px);
+    border: 1px solid;
+}
+
+
+.Episode:hover{
+    cursor: pointer;
+    background-color: darkgray;
+
+}
+
+
+

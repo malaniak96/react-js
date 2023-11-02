@@ -1,11 +1,20 @@
 import React from 'react';
+
 import css from './Header.module.css'
-import {Outlet} from "react-router-dom";
+import {useChapter} from "../../hooks";
+
 const Header = () => {
+
+   const {chapter} = useChapter();
+
     return (
         <div className={css.Header}>
-            <h1>Ricky & Morty Episodes</h1>
-            <Outlet/>
+            {
+                chapter ?
+                    <h1>{chapter}</h1>
+                    :
+                    <h1>Rick & Morty Episodes</h1>
+            }
         </div>
     );
 };

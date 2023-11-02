@@ -1,11 +1,12 @@
 
 import {urls} from "../constants/urls";
+
 import {axiosService} from "./axiosService";
 
 
 const characterService = {
-    getAll: ()=> axiosService.get(urls.character),
-    getById: (id) => axiosService.get(urls.character)
+    getByIds: (ids) => axiosService.get(urls.character.byIds(ids))
+
 }
 
 
