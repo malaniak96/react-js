@@ -6,18 +6,18 @@ import {useForm} from "react-hook-form";
 import {useDispatch, useSelector} from "react-redux";
 import {carActions} from "../slices/carSlice";
 
+import {carService} from "../services/carService";
+
 const CarForm = () => {
     const {reset, register, handleSubmit, formState: {errors, isValid}, setValue} = useForm({
         mode: 'all',
         resolver: joiResolver(carValidator)
     });
-
-    const {carForUpdate} = useSelector(state => state.cars);
     const dispatch = useDispatch();
 
-    const trigger = () => {
-        dispatch(prev => !prev)
-    }
+    const {carForUpdate} = useSelector(state => state.cars);
+
+
 
     useEffect(() => {
         if (carForUpdate) {
@@ -28,15 +28,15 @@ const CarForm = () => {
     }, [carForUpdate, setValue])
 
     const save = async (car) => {
-        await dispatch(carActions.create(car))
-        trigger()
+        await carService.create(car)
+        dispatch(carActions.trigger())
         reset()
-
     }
 
     const update = async (car) => {
-        await dispatch(carActions.update(carForUpdate.id, car ))
-        trigger()
+        await carService.updateById(carForUpdate.id, car)
+        dispatch(carActions.trigger())
+        dispatch(carActions.setCarForUpdate(null))
         reset()
     }
 

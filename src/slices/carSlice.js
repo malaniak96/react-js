@@ -3,8 +3,8 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
     cars: [],
-    carForUpdate: null,
-    flag: null
+    trigger: null,
+    carForUpdate: null
 }
 
 let carSlice = createSlice({
@@ -12,25 +12,21 @@ let carSlice = createSlice({
     initialState,
     reducers: {
         setResponse: (state = initialState, action) => {
-        const cars =  action.payload;
-        const carForUpdate= action.payload;
-        const flag = action.payload;
+        state.cars = action.payload
+        },
+        trigger: state => {
+            state.trigger = !state.trigger
+        },
+        setCarForUpdate: (state, action) => {
+            state.carForUpdate = action.payload
         }
     }
 })
 
-const {reducer: carReducer, actions: getCars,
-    create,
-    update,
-    deleteCar,
-    setCarForUpdate} = carSlice;
+const {reducer: carReducer, actions} = carSlice;
 
 const carActions = {
-    getCars,
-    create,
-    update,
-    deleteCar,
-    setCarForUpdate
+   ...actions
 }
 
 export {

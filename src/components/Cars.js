@@ -5,15 +5,13 @@ import {carActions} from "../slices/carSlice";
 import {carService} from "../services/carService";
 
 const Cars = () => {
+    const {cars, trigger} = useSelector( state => state.cars);// cars from store redux
 
-    const dispatch = useDispatch();
-
-    const {cars} = useSelector( state => state.cars);
-
+    const dispatch = useDispatch();//hook
 
     useEffect(() => {
-        carService.getAll().then(({data}) =>    dispatch(carActions.getCars(data)))
-    }, [dispatch])
+        carService.getAll().then(({data}) =>  dispatch(carActions.setResponse(data)))
+    }, [trigger, dispatch])
 
 
     return (
