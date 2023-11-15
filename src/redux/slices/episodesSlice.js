@@ -4,8 +4,8 @@ import {episodesService} from "../../services/episodeService";
 
 const initialState = {
     episodes: [],
-    info: { prev: null,
-            next: null},
+    info: { prev: 1,
+            next: 1},
     errors: null,
     isLoading: null,
     chapter: null
@@ -37,7 +37,8 @@ const episodesSlice = createSlice({
         builder
             .addCase(getAll.fulfilled, (state, action) => {
                 const {info: {prev, next}, results} = action.payload;
-                state.pages = {prev, next}
+                state.info.prev = prev
+                state.info.next = next
                 state.episodes = results
                 state.chapter = null
 
