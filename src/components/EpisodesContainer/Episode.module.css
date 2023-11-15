@@ -1,0 +1,10 @@
+.Episode {
+    border: 1px solid red;
+    width: calc(20% - 2px);
+    font-size: 15px;
+}
+
+.Episode:hover {
+    cursor: pointer;
+    background-color: rgb(140, 126, 126);
+}
