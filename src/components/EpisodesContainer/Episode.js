@@ -1,14 +1,16 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom";
-import css from './Episode.module.css'
 import {useDispatch} from "react-redux";
+
 import {episodesActions} from "../../redux/slices/episodesSlice";
+import css from './Episode.module.css'
 
 const Episode = ({episode}) => {
     const {id, name, episode: chapter, characters} = episode;
     const dispatch = useDispatch();
 
     const navigate = useNavigate();
+
     const toCharacters = () => {
         const ids = characters.map(character => character.split('/').slice(-1)[0]).join(',');
         dispatch(episodesActions.setChapter(chapter))

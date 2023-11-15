@@ -1,0 +1,10 @@
+.Character {
+    border: 1px solid red;
+    width: calc(20% - 2px);
+    font-size: 15px;
+}
+
+.Characters{
+    display: flex;
+    flex-wrap: wrap;
+}
